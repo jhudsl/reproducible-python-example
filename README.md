@@ -3,7 +3,8 @@
 This is an example project repository to illustrate what a reproducible analysis might look like as discussed in more detail in the [Reproducibility in Cancer Informatics course](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics).  
 It can be used as a template or otherwise borrowed from.
 
-This example analysis:  
+_This example analysis:_  
+
 - Downloads [data from refine.bio](https://www.refine.bio/experiments/SRP070849/combination-targeted-therapy-to-disrupt-aberrant-oncogenic-signaling-and-reverse-epigenetic-dysfunction-in-idh2-and-tet2-mutant-acute-myeloid-leukemia-rna-seq)
 - Identifies the top 90th percentile variant genes from the set.
 - Creates and saves a heatmap from those genes.
@@ -72,4 +73,9 @@ Running `docker ps` should show you the `jhudsl/reproducible-python` listed with
 
 ## Github actions
 
-There are two main GitHub actions
+There are two main GitHub actions in this repository:
+- `docker-management.yml` - Tests the building of the docker image upon changes to the `Dockerfile` being added to a pull request.
+- `run-py-notebook.yml` - Re-runs the analysis by running `make_heatmap.ipynb` within the docker image (using the [command described above](#how-to-run-the-analysis)).
+
+Both GitHub actions have the option [to be run manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
+The Docker management GitHub actions also has the option to push the re-built Docker image to Dockerhub by setting `dockerhubpush` to `true`. 
