@@ -73,9 +73,10 @@ Running `docker ps` should show you the `jhudsl/reproducible-python` listed with
 
 ## Github actions
 
-There are two main GitHub actions in this repository:
+There are two main GitHub actions in this repository:  
+
 - `docker-management.yml` - Tests the building of the docker image upon changes to the `Dockerfile` being added to a pull request.
 - `run-py-notebook.yml` - Re-runs the analysis by running `make_heatmap.ipynb` within the docker image (using the [command described above](#how-to-run-the-analysis)).
 
 Both GitHub actions have the option [to be run manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
-The Docker management GitHub actions also has the option to push the re-built Docker image to Dockerhub by setting `dockerhubpush` to `true`. 
+The Docker management GitHub actions also has the option to push the re-built Docker image to Dockerhub by setting `dockerhubpush` to `true`.
