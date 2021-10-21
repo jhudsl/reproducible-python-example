@@ -33,7 +33,7 @@ def make_color_key(variable):
     # Make into data frame where index is sample IDs
     color_key = pd.Series(variable.map(color_key_dict))
     
-    return({"color_key_dict": color_key_dict, "color_key": color_key})
+    return {"color_key_dict": color_key_dict, "color_key": color_key}
 
 
 def make_legend(color_key_dict, title):
