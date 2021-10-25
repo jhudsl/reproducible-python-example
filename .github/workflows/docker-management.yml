@@ -46,7 +46,7 @@ jobs:
           push: false
           load: true
           # What directory should this be building from?
-          context: docker
+          context: .
           # Where's the Dockerfile to build this image from?
           file: docker/Dockerfile
           # What should this docker image be called once we are done?
