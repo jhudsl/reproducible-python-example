@@ -3,8 +3,9 @@ LABEL maintainer="cansav09@gmail.com"
 
 USER root
 
-RUN pip3 install \
-  "pyrefinebio" \
-  "session_info"
+# Create the environment:
+COPY environment.yml .
+RUN conda env create -f environment.yml
 
-USER ${NB_UID}
+# Activate the environment, and make sure it's activated:
+RUN conda activate reproducible-python
