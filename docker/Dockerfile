@@ -1,6 +1,7 @@
-FROM continuumio/miniconda3
+FROM jupyter/minimal-notebook
+MAINTAINER cansav09@gmail.com
 
-ADD environment.yml .
+COPY environment.yml .
 RUN conda env create -f environment.yml
 
 # Pull the environment name out of the environment.yml
