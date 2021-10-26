@@ -130,4 +130,5 @@ dependencies:
     - pyrefinebio==0.4.7
     - pytimeparse==1.1.8
     - pyyaml==6.0
+    - session_info
 prefix: /opt/anaconda3/envs/reproducible-python
