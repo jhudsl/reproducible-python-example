@@ -38,7 +38,7 @@ RUN jupyter nbextension enable codefolding/main
 RUN jupyter nbextension enable scratchpad/main
 RUN jupyter nbextension enable --py widgetsnbextension
 
-ENV NB_USER feynman
+ENV NB_USER pythoner
 ENV NB_UID 1000
 
 RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER
