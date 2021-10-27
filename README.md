@@ -92,6 +92,8 @@ Develop and install new packages as you need them, to update the conda environme
 conda env export > environment.yml
 ```
 
+Be sure to add the `environment.yml` file to any commits and pull requests since that's what has stored the package changes to your environment!
+
 ## Docker
 
 ### Running the Python docker image for development purposes
