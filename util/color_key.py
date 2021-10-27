@@ -36,12 +36,13 @@ def make_color_key(variable):
     return {"color_key_dict": color_key_dict, "color_key": color_key}
 
 
-def make_legend(color_key_dict, title):
+def make_legend(color_key_dict):
     """Creates color key legend for a dictionary provided 
 
     Args:
       color_key_dict: A dictionary obtained from make_color_key might look like metadata['refinebio_treatment']
       title: A string indicating the title for the legend.
+      loc: where should this legend go? Can be upper/lower right/left.
     Returns:
       A legend on the plot that was last called.
     """
@@ -49,6 +50,5 @@ def make_legend(color_key_dict, title):
     # Set up based on color dictionary
     handles = [Patch(facecolor = color_key_dict[name]) for name in color_key_dict]
     
-    # Make a legend for these color codes 
-    plt.legend(handles, color_key_dict, title = title,
-               bbox_to_anchor = (1, 1), bbox_transform = plt.gcf().transFigure, loc = 'upper right')
+    return handles
+    

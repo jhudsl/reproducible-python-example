@@ -25,6 +25,7 @@ dependencies:
   - decorator=5.1.0
   - defusedxml=0.7.1
   - entrypoints=0.3
+  - fastcluster=1.2.4
   - fonttools=4.25.0
   - freetype=2.10.4
   - giflib=5.2.1
