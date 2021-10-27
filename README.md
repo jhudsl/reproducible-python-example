@@ -11,6 +11,24 @@ _This example analysis:_
 
 It also has its own Docker image and GitHub actions to aid reproducibility.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Reproducible analysis example - Python](#reproducible-analysis-example---python)
+  - [Requirements](#requirements)
+  - [How to run the analysis](#how-to-run-the-analysis)
+  - [make_heatmap.ipynb](#make_heatmapipynb)
+    - [Input](#input)
+    - [Output](#output)
+  - [conda](#conda)
+  - [Docker](#docker)
+    - [Running the Python docker image for development purposes](#running-the-python-docker-image-for-development-purposes)
+    - [Rebuilding the docker image locally](#rebuilding-the-docker-image-locally)
+  - [Github actions](#github-actions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Requirements
 
 To run this analysis you will need [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [`Docker`](https://docs.docker.com/get-docker/) installed on your computer.
