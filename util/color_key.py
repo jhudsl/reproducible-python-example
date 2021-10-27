@@ -41,10 +41,9 @@ def make_legend(color_key_dict):
 
     Args:
       color_key_dict: A dictionary obtained from make_color_key might look like metadata['refinebio_treatment']
-      title: A string indicating the title for the legend.
-      loc: where should this legend go? Can be upper/lower right/left.
     Returns:
-      A legend on the plot that was last called.
+      A list that is ready for making a legend out of with plt.legend or heatmap.ax_row_dendrogram.legend or
+      heatmap.ax_col_dendrogram.legend
     """
 
     # Set up based on color dictionary
