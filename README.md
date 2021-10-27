@@ -82,10 +82,17 @@ Then you can activate your conda environment using this command:
 conda activate reproducible-python
 ```
 Now you can start up JupyterLab again using this command:
-
 ```
 jupyter lab
 ```
+
+Working from JuptyerLab, use the "Reproducible Python" Kernel.
+Develop and install new packages as you need them, to update the conda environment with the new packages you installed, run this command:
+```
+conda env export > environment.yml
+```
+
+Be sure to add the `environment.yml` file to any commits and pull requests since that's what has stored the package changes to your environment!
 
 ## Docker
 
