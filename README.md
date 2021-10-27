@@ -40,7 +40,7 @@ docker run \
 
 ## Input
 
-The [data used by this analysis](dataset can be downloaded from this page on refine.bio](https://www.refine.bio/experiments/SRP070849) is downloaded [processed and quantile normalized](http://docs.refine.bio/en/latest/main_text.html#refine-bio-processed-refinebio-processedibadge) from refine.bio using their API.
+The [dataset used by this analysis](https://www.refine.bio/experiments/SRP070849) is downloaded already [processed and quantile normalized](http://docs.refine.bio/en/latest/main_text.html#refine-bio-processed-refinebio-processedibadge) from refine.bio using their API.
 It is RNA-seq data from 19 acute myeloid leukemia (AML) mice models.
 
 ## Output
