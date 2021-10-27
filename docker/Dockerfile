@@ -2,9 +2,14 @@ FROM jupyter/minimal-notebook
 MAINTAINER cansav09@gmail.com
 
 COPY environment.yml .
-RUN conda env create -f environment.yml
 
 USER root
+
+# Make sure this yml is permissions open for everybody.
+RUN chmod 777 environment.yml
+
+# Now make the environment
+RUN conda env create -f environment.yml
 
 # Pull the environment name out of the environment.yml
 RUN echo "source activate reproducible-python" > ~/.bashrc
