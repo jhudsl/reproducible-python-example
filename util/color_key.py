@@ -36,19 +36,18 @@ def make_color_key(variable):
     return {"color_key_dict": color_key_dict, "color_key": color_key}
 
 
-def make_legend(color_key_dict, title):
+def make_legend(color_key_dict):
     """Creates color key legend for a dictionary provided 
 
     Args:
       color_key_dict: A dictionary obtained from make_color_key might look like metadata['refinebio_treatment']
-      title: A string indicating the title for the legend.
     Returns:
-      A legend on the plot that was last called.
+      A list that is ready for making a legend out of with plt.legend or heatmap.ax_row_dendrogram.legend or
+      heatmap.ax_col_dendrogram.legend
     """
 
     # Set up based on color dictionary
     handles = [Patch(facecolor = color_key_dict[name]) for name in color_key_dict]
     
-    # Make a legend for these color codes 
-    plt.legend(handles, color_key_dict, title = title,
-               bbox_to_anchor = (1, 1), bbox_transform = plt.gcf().transFigure, loc = 'upper right')
+    return handles
+    
