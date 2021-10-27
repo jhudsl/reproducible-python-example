@@ -11,6 +11,24 @@ _This example analysis:_
 
 It also has its own Docker image and GitHub actions to aid reproducibility.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Reproducible analysis example - Python](#reproducible-analysis-example---python)
+  - [Requirements](#requirements)
+  - [How to run the analysis](#how-to-run-the-analysis)
+  - [make_heatmap.ipynb](#make_heatmapipynb)
+    - [Input](#input)
+    - [Output](#output)
+  - [conda](#conda)
+  - [Docker](#docker)
+    - [Running the Python docker image for development purposes](#running-the-python-docker-image-for-development-purposes)
+    - [Rebuilding the docker image locally](#rebuilding-the-docker-image-locally)
+  - [Github actions](#github-actions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Requirements
 
 To run this analysis you will need [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [`Docker`](https://docs.docker.com/get-docker/) installed on your computer.
@@ -38,17 +56,36 @@ docker run \
 
 ## make_heatmap.ipynb
 
-## Input
+### Input
 
 The [dataset used by this analysis](https://www.refine.bio/experiments/SRP070849) is downloaded already [processed and quantile normalized](http://docs.refine.bio/en/latest/main_text.html#refine-bio-processed-refinebio-processedibadge) from refine.bio using their API.
 It is RNA-seq data from 19 acute myeloid leukemia (AML) mice models.
 
-## Output
+### Output
 
 Two directories are created by this analysis and hold the output:  
 
 `plots/` - contains the heatmap png: `aml_heatmap.png`
 `results/` - contains the TSV file list of most variant genes: `top_90_var_genes.tsv`
+
+## conda
+
+Package management for this project is done with conda.
+[If you don't have conda, you will need to install that first](https://conda.io/projects/conda/en/latest/user-guide/install/index.html#installation).
+[This article](https://medium.com/swlh/setting-up-a-conda-environment-in-less-than-5-minutes-e64d8fc338e4) is a great short introduction to conda.
+You can create your conda environment by using this command at the top of your repository:
+```
+conda env create --file environment.yml
+```
+Then you can activate your conda environment using this command:
+```
+conda activate reproducible-python
+```
+Now you can start up JupyterLab again using this command:
+
+```
+jupyter lab
+```
 
 ## Docker
 
