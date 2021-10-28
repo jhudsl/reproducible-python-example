@@ -89,7 +89,7 @@ jupyter lab
 Working from JuptyerLab, use the "Reproducible Python" Kernel.
 Develop and install new packages as you need them, to update the conda environment with the new packages you installed, run this command:
 ```
-conda env export > environment.yml
+conda env export --from-history
 ```
 
 Be sure to add the `environment.yml` file to any commits and pull requests since that's what has stored the package changes to your environment!
@@ -126,7 +126,7 @@ The Docker management GitHub actions also has the option to push the re-built Do
 ## Styling with Black
 
 The Docker container and conda environment are equipped with python black for styling purposes.
-To run on each python file here, use these commands: 
+To run on each python file here, use these commands:
 ```
 python -m black make_heatmap.ipynb
 python -m black util/color_key.py
