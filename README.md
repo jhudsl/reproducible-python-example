@@ -15,17 +15,17 @@ It also has its own Docker image and GitHub actions to aid reproducibility.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Reproducible analysis example - Python](#reproducible-analysis-example---python)
-  - [Requirements](#requirements)
-  - [How to run the analysis](#how-to-run-the-analysis)
-  - [make_heatmap.ipynb](#make_heatmapipynb)
-    - [Input](#input)
-    - [Output](#output)
-  - [conda](#conda)
-  - [Docker](#docker)
-    - [Running the Python docker image for development purposes](#running-the-python-docker-image-for-development-purposes)
-    - [Rebuilding the docker image locally](#rebuilding-the-docker-image-locally)
-  - [Github actions](#github-actions)
+- [Requirements](#requirements)
+- [How to run the analysis](#how-to-run-the-analysis)
+- [make_heatmap.ipynb](#make_heatmapipynb)
+  - [Input](#input)
+  - [Output](#output)
+- [conda](#conda)
+- [Docker](#docker)
+  - [Running the Python docker image for development purposes](#running-the-python-docker-image-for-development-purposes)
+  - [Rebuilding the docker image locally](#rebuilding-the-docker-image-locally)
+- [Github actions](#github-actions)
+- [Styling with Black](#styling-with-black)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -122,3 +122,12 @@ There are two main GitHub actions in this repository:
 
 Both GitHub actions have the option [to be run manually](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow).
 The Docker management GitHub actions also has the option to push the re-built Docker image to Dockerhub by setting `dockerhubpush` to `true`.
+
+## Styling with Black
+
+The Docker container and conda environment are equipped with python black for styling purposes.
+To run on each python file here, use these commands: 
+```
+python -m black make_heatmap.ipynb
+python -m black util/color_key.py
+```
