@@ -46,13 +46,15 @@ git clone https://github.com/jhudsl/reproducible-python-example.git
 ```
 cd reproducible-python-example
 ```
-3. Use the following command to run the analysis:  
+3. Use the following command to run the analysis in the repository you just cloned:  
 ```
 docker run \
 --mount type=bind,target=/home/jovyan/work,source=$PWD \
   jhudsl/reproducible-python \
   jupyter nbconvert --execute work/make_heatmap.ipynb --to notebook --inplace
 ```
+
+<!-- I think it would be helpful to note that this analysis is being run in the repo that was just cloned, not somewhere else -->
 
 ## make_heatmap.ipynb
 
@@ -70,8 +72,10 @@ Two directories are created by this analysis and hold the output:
 
 ## conda
 
+<!-- I think it would be helpful to suggest anaconda or miniconda here. I'm guessing Anaconda for your users? -->
+
 Package management for this project is done with conda.
-[If you don't have conda, you will need to install that first](https://conda.io/projects/conda/en/latest/user-guide/install/index.html#installation).
+[If you don't have conda, you will need to install that first via Anaconda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html#installation).
 [This article](https://medium.com/swlh/setting-up-a-conda-environment-in-less-than-5-minutes-e64d8fc338e4) is a great short introduction to conda.
 You can create your conda environment by using this command at the top of your repository:
 ```
@@ -81,12 +85,18 @@ Then you can activate your conda environment using this command:
 ```
 conda activate reproducible-python
 ```
+
+<!-- Nice to check this was done correctly with `conda env list` -->
+
 Now you can start up JupyterLab again using this command:
 ```
 jupyter lab
 ```
 
 Working from JuptyerLab, use the "Reproducible Python" Kernel.
+
+<!-- I think this might be a little confusing and lead folks to searching for the "kernel".. maybe clarify a bit here -->
+
 Develop and install new packages as you need them, to update the conda environment with the new packages you installed, run this command:
 ```
 conda env export --from-history
@@ -97,6 +107,8 @@ Be sure to add the `environment.yml` file to any commits and pull requests since
 ## Docker
 
 ### Running the Python docker image for development purposes
+
+<!-- Will students be doing this? Or is this for DaSL? I guess I'm wondering if this should go in the wiki or somewhere else? -->
 
 With your current directory being the top of this repository, run this command in your Terminal:
 ```
@@ -131,3 +143,4 @@ To run on each python file here, use these commands:
 python -m black make_heatmap.ipynb
 python -m black util/color_key.py
 ```
+<!-- I don't think jupyter styling is provided by default, it's not a huge deal but you might want to do `pip install "black[jupyter]"` in the env ahead of time -->
